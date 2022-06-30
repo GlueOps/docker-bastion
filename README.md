@@ -15,7 +15,7 @@ and usually involves access from untrusted networks orcomputers.
 
 ## Useful cases
 
-[Bastion](https://hub.docker.com/r/binlab/bastion) is an isolated
+[Bastion](https://hub.docker.com/r/GlueOps/bastion) is an isolated
 `Docker` image that can work as a link between `Public` and `Private`
 network. It can be also useful for reverse `SSH` tunneling for a host
 behind a `NAT`. This image based on `Alpine Linux` last version.
@@ -66,7 +66,7 @@ $ docker run -d \
     -e "X11_FORWARDING=false" \
     -e "TCP_FORWARDING=true" \
     -e "AGENT_FORWARDING=true" \
-    binlab/bastion
+    GlueOps/bastion
 ```
 
 Docker-compose example:
@@ -75,7 +75,7 @@ Docker-compose example:
 version: "3.6"
 services:
   bastion:
-    image: binlab/bastion
+    image: GlueOps/bastion
     container_name: bastion
     hostname: bastion
     restart: unless-stopped
@@ -123,7 +123,7 @@ $ sudo usermod -aG docker <your_user>
 ```shell
 $ mkdir $HOME/docker 
 $ cd $HOME/docker
-$ git clone https://github.com/binlab/docker-bastion.git
+$ git clone https://github.com/GlueOps/docker-bastion.git
 $ cd docker-bastion
 ```
 
